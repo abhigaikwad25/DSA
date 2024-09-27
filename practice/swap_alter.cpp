@@ -17,6 +17,8 @@ int main()
 {
     int arr[5];
     int n = sizeof(arr)/sizeof(arr[0]);
+    //sizeof give the length in byte 4 for each index 4*5=20 and one index is of 4
+    //20/4=5 
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
