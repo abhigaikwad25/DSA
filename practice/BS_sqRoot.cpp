@@ -22,10 +22,24 @@ int squareRoot(int num){
     }
     return ans;
 }
+double morePrecision(int num,int precision,int tempAns){
+    double factor=1;
+    double ans=tempAns;
+    for(int i=0;i<precision;i++){
+        factor=factor/10;
+        for(double j=ans;j*j<num;j=j+factor){
+            ans=j;
+        }
+    }
+    return ans;
+}
+
 
 int main(){
     int num;
     cout<<"Enter the number inside Square Root : ";
     cin>>num;
-    cout<<"Square Root of "<<num<<" is "<<squareRoot(num);
+
+    int tempAns=squareRoot(num);
+    cout<<"Square Root of "<<num<<" is "<<morePrecision(num,3,tempAns);
 }
