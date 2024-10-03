@@ -37,5 +37,5 @@ int main()
     // a : define the starting range
     // b : define the ending range
     d.erase(d.begin(), d.begin() + 1);
-    cout<<"Size after erase : "<<d.size()<<endl;
+    cout<<"Size after erase : "<<d.size()<<endl; 
 }
