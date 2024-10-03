@@ -13,6 +13,7 @@
         "functional": "cpp",
         "tuple": "cpp",
         "iostream": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "vector": "cpp"
     }
 }
