@@ -1,18 +1,31 @@
 #include <iostream>
 using namespace std;
 
+char lowercase(int ch){
+    if(ch>='a'&&ch<='z'){
+        return ch;
+    }
+    else{
+        char temp=ch-'A'+'a';
+        return temp;
+    }
+}
+
 bool is_Palindrome(char name[], int n)
 {
     int s=0;
     int e=n-1;
     int result=1;
     while(s<=e){
-        if(name[s]!=name[e]){
+        if(lowercase(name[s])!=lowercase(name[e])){
             result=0;
             break;
         }
-        s++;
-        e--;
+        if(name[s]>=0&&name[s]<=9 &&){
+            s++;
+            e--;
+
+        }
     }
     return result;
 }
@@ -38,4 +51,7 @@ int main()
     else{
         cout<<"False"<<endl;
     }
+
+    cout<<"b : "<<lowercase('b')<<endl;
+    cout<<"C : "<<lowercase('C')<<endl;
 }
