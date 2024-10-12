@@ -6,9 +6,9 @@ void printLikeWave(int arr[3][3])
 
     for (int j = 0; j < 4; j++)
     {
-        if (j & 1 || j==0)
+        if (j & 1)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 2; i >=0; i--)
             {
                 cout << arr[i][j] <<" ";
             }
@@ -16,7 +16,7 @@ void printLikeWave(int arr[3][3])
         else
         {
             //i starting from 2 because no of row are 3 indeex start from 0
-            for (int i = 2; i >=0; i--)
+            for (int i = 0; i < 3; i++)
             {
                 cout << arr[i][j] <<" ";
             }
