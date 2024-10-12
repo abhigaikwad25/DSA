@@ -17,6 +17,7 @@
         "vector": "cpp",
         "queue": "cpp",
         "typeinfo": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "algorithm": "cpp"
     }
 }
