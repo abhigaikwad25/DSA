@@ -67,13 +67,19 @@ int main(){
 
 
 
-    int arr[10]={2,4,6};
-    cout<<"Address of 1st : "<<arr<<endl;
-    // arr=arr+1;//Error cant change because of symbol table
+    // int arr[10]={2,4,6};
+    // cout<<"Address of 1st : "<<arr<<endl;
+    // // arr=arr+1;//Error cant change because of symbol table
 
-    int *ptr=&arr[0];
-    cout<<"Address of 1st using ptr : "<<ptr<<endl; //710
-    ptr=ptr+1;
-    cout<<"Address of increased ptr : "<<ptr<<endl; //714   Denotes next location
+    // int *ptr=&arr[0];
+    // cout<<"Address of 1st using ptr : "<<ptr<<endl; //710
+    // ptr=ptr+1;
+    // cout<<"Address of increased ptr : "<<ptr<<endl; //714   Denotes next location
+
+
+
+
+
+    
 
 }
