@@ -2,13 +2,13 @@
 #include <vector>
 using namespace std;
 
-void solve(vector<int>& arr, vector<int>& output, int index)
+void solve(string str, string output, int index)
 {
     // base case
-    if (index >= arr.size())
+    if (index >= str.size())
     {
         cout<<"{ ";
-        for (int nums : output)
+        for (char nums : output)
         {
             cout << nums << " ";
         }
@@ -17,20 +17,20 @@ void solve(vector<int>& arr, vector<int>& output, int index)
     }
 
     // exclude
-    solve(arr, output, index + 1);
+    solve(str, output, index + 1);
 
     // include
-    output.push_back(arr[index]);
-    solve(arr, output, index + 1);
+    output.push_back(str[index]);
+    solve(str, output, index + 1);
     
     output.pop_back();
 }
 
 int main()
 {
-    vector<int> arr = {1, 2, 3};
-    vector<int> output;
+    string str = "abc";
+    string output;
     int index = 0;
 
-    solve(arr, output, index);
+    solve(str, output, index);
 }
