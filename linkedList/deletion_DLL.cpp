@@ -180,3 +180,19 @@ int main()
     cout << "Head : " << head->data << endl;
     cout << "Tail : " << tail->data << endl;
 }
+
+
+// ~Node():
+// This is the destructor for the Node class. It is called automatically when an object of the Node class is destroyed, ensuring cleanup of resources.
+
+// int value = this->data;:
+// This line retrieves the value of the node's data member and assigns it to the local variable value. However, this step is unnecessary in the context of memory cleanup and can be omitted.
+
+// if (next != NULL):
+// This checks if the next pointer (which points to the next node in a linked list) is not null. If next is null, it means this is the last node in the list.
+
+// delete next;:
+// If next is not null, the destructor recursively deletes the node pointed to by next. This ensures that all nodes in the linked list are deleted, starting from the current node.
+
+// next = NULL;:
+// After deleting the next node, the next pointer is set to NULL to avoid dangling pointers.
