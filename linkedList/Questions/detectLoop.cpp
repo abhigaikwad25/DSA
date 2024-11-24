@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Node{
@@ -58,27 +59,26 @@ void insertAtPosition(Node* &tail,Node* &head,int position,int d){
 }
 
 
-
 /////////////////////////////// Circular Linked List ////////////////////////////////////
-//Checks LL is circular or not
-bool checkCircular(Node* head){
-    Node* temp=head->next;
+
+bool detectLoop(Node* head){
 
     if(head==NULL){
-        return true;
+        return false;
     }
-    else{
-        while(temp!=NULL && temp!=head){
-            temp=temp->next;
-        }
-        if(temp==NULL){
-            return false;
-        }
-        if(temp==head){
+    Node* temp=head;
+    map<Node*,bool> visited;
+
+    while(temp!=NULL){
+
+        if(visited[temp]==true){
             return true;
+            cout<<"Loop is Present : "<<temp->data<<endl;
         }
+        visited[temp]=true;
+        temp=temp->next;
     }
-    return 0;
+    return false;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -105,16 +105,18 @@ int main(){
     insertAtTail(tail,25);
     print(head);
 
+
     insertAtPosition(tail,head,4,20);
     print(head);
 
-    cout<<"Head : "<<head->data<<endl;
-    cout<<"Head : "<<tail->data<<endl;
+    tail->next=head->next; //this line make loop in linked list 
+    
+    
 
-    if(checkCircular(tail)){
-        cout<<"Circular LL"<<endl;
+    if(detectLoop(head)){
+        cout<<"Loop present"<<endl;
     }
     else{   
-        cout<<"Non Circular LL"<<endl;
+        cout<<"Loop is not present"<<endl;
     }
 }

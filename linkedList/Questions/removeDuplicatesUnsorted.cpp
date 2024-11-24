@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Node{
@@ -58,28 +59,36 @@ void insertAtPosition(Node* &tail,Node* &head,int position,int d){
 }
 
 
+/////////////////////////////// Remove Duplicates UnSorted LL ////////////////////////////////////
 
-/////////////////////////////// Circular Linked List ////////////////////////////////////
-//Checks LL is circular or not
-bool checkCircular(Node* head){
-    Node* temp=head->next;
+
+void removeDuplicates(Node* head){
 
     if(head==NULL){
-        return true;
+        cout<<"LL is Empty"<<endl;
+        return ;
     }
-    else{
-        while(temp!=NULL && temp!=head){
+    Node* temp=head;
+    Node* prev=NULL;
+    map<int,bool> visited;
+
+    while(temp!=NULL){
+
+        if(visited[temp->data]==true){
+            Node* nodeToDelete=temp;
+            prev->next=temp->next;
+            temp=temp->next;
+            delete nodeToDelete;
+        }
+        else{
+            visited[temp->data]=true;
+            prev=temp;
             temp=temp->next;
         }
-        if(temp==NULL){
-            return false;
-        }
-        if(temp==head){
-            return true;
-        }
     }
-    return 0;
+    cout<<"Duplicates Remove succesfully"<<endl;
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -105,16 +114,15 @@ int main(){
     insertAtTail(tail,25);
     print(head);
 
+    insertAtTail(tail,25);
+    print(head);
+
+
     insertAtPosition(tail,head,4,20);
     print(head);
 
-    cout<<"Head : "<<head->data<<endl;
-    cout<<"Head : "<<tail->data<<endl;
+    removeDuplicates(head);
+    print(head);
 
-    if(checkCircular(tail)){
-        cout<<"Circular LL"<<endl;
-    }
-    else{   
-        cout<<"Non Circular LL"<<endl;
-    }
+    
 }
