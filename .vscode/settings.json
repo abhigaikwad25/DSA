@@ -47,6 +47,7 @@
         "limits": "cpp",
         "new": "cpp",
         "numbers": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "unordered_set": "cpp"
     }
 }
