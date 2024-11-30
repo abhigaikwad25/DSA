@@ -99,13 +99,13 @@ int main(){
     Node* tail=node1;
     print(head);
 
-    insertAtHead(head,15);
-    print(head);
+    // insertAtHead(head,15);
+    // print(head);
 
-    insertAtTail(tail,25);
-    print(head);
+    // insertAtTail(tail,25);
+    // print(head);
 
-    insertAtPosition(tail,head,4,20);
+    insertAtPosition(tail,head,2,20);
     print(head);
 
     cout<<"Head : "<<head->data<<endl;
